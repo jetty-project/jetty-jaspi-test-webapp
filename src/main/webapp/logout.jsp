@@ -1,10 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page import="java.util.*"%>
-<%@ page import="javax.servlet.*" %>
-<%@ page import="javax.servlet.http.*" %>
+<%@ page import="javax.servlet.http.HttpSession"%>
 <html>
 <head>
-<title>Logout</title>
+    <title>Logout</title>
 </head>
 
 <body>
