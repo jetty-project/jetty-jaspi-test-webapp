@@ -1,20 +1,19 @@
+//
 // ========================================================================
-// Copyright (c) 2004-2009 Mort Bay Consulting Pty. Ltd.
-// ------------------------------------------------------------------------
-// All rights reserved. This program and the accompanying materials
-// are made available under the terms of the Eclipse Public License v1.0
-// and Apache License v2.0 which accompanies this distribution.
-// The Eclipse Public License is available at 
-// http://www.eclipse.org/legal/epl-v10.html
-// The Apache License v2.0 is available at
-// http://www.opensource.org/licenses/apache2.0.php
-// You may elect to redistribute this code under either of these licenses. 
+// Copyright (c) 1995-2022 Mort Bay Consulting Pty Ltd and others.
+//
+// This program and the accompanying materials are made available under the
+// terms of the Eclipse Public License v. 2.0 which is available at
+// https://www.eclipse.org/legal/epl-2.0, or the Apache License, Version 2.0
+// which is available at https://www.apache.org/licenses/LICENSE-2.0.
+//
+// SPDX-License-Identifier: EPL-2.0 OR Apache-2.0
 // ========================================================================
+//
 
 package com.acme;
 
 import java.io.IOException;
-
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -23,46 +22,27 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
-
-/* ------------------------------------------------------------ */
-/** TestFilter.
- * 
- */
 public class TestFilter implements Filter
 {
     private ServletContext _context;
-    
-    /* ------------------------------------------------------------ */
-    /* 
-     * @see javax.servlet.Filter#init(javax.servlet.FilterConfig)
-     */
+
     public void init(FilterConfig filterConfig) throws ServletException
     {
-        _context= filterConfig.getServletContext();
+        _context = filterConfig.getServletContext();
     }
 
-    /* ------------------------------------------------------------ */
-    /* 
-     * @see javax.servlet.Filter#doFilter(javax.servlet.ServletRequest, javax.servlet.ServletResponse, javax.servlet.FilterChain)
-     */
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-            throws IOException, ServletException
+        throws IOException, ServletException
     {
         String user = ((HttpServletRequest)request).getRemoteUser();
         String url = ((HttpServletRequest)request).getRequestURL().toString();
-        System.err.println("TestFilter: Request.url = " +url+", Request.getRemoteUser = "+user);
+        System.err.println("TestFilter: Request.url = " + url + ", Request.getRemoteUser = " + user);
 
         chain.doFilter(request, response);
     }
 
-    /* ------------------------------------------------------------ */
-    /* 
-     * @see javax.servlet.Filter#destroy()
-     */
     public void destroy()
     {
     }
-
 }
