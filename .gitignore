@@ -5,17 +5,27 @@
 
 # maven
 target/
-*/src/main/java/META-INF/
 *.versionsBackup
+*.releaseBackup
 bin/
 
 # common junk
 *.log
-*.swp
 *.diff
 *.patch
+*.sw[a-p]
+*.bak
+*.backup
+*.debug
+*.dump
+.attach_pid*
 
-# intellij
+# vim 
+.*.sw[a-p]
+*~
+~*
+
+# intellij / android studio
 *.iml
 *.ipr
 *.iws
@@ -31,12 +41,8 @@ bin/
 # netbeans
 /nbproject
 
-# vim
-.*.sw[a-p]
-
 # merge tooling
 *.orig
 
-#maven
-*.versionsBackup
-*.releaseBackup
+# test generated content
+.flattened-pom.xml
