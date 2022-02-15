@@ -24,9 +24,9 @@
     <maven.war.plugin.version>3.3.2</maven.war.plugin.version>
     <license.plugin.version>4.1</license.plugin.version>
 
-    <jakarta.servlet.api.version>4.0.4</jakarta.servlet.api.version>
-    <jakarta.servlet.jsp.api.version>2.3.6</jakarta.servlet.jsp.api.version>
-    <jetty.version>10.0.8</jetty.version>
+    <jakarta.servlet.api.version>5.0.0</jakarta.servlet.api.version>
+    <jakarta.servlet.jsp.api.version>3.0.0</jakarta.servlet.jsp.api.version>
+    <jetty.version>11.0.8</jetty.version>
   </properties>
   <build>
     <plugins>
