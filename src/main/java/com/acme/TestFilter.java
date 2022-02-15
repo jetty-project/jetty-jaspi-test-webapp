@@ -14,7 +14,6 @@
 package com.acme;
 
 import java.io.IOException;
-
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -23,46 +22,27 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
-
-/* ------------------------------------------------------------ */
-/** TestFilter.
- * 
- */
 public class TestFilter implements Filter
 {
     private ServletContext _context;
-    
-    /* ------------------------------------------------------------ */
-    /* 
-     * @see javax.servlet.Filter#init(javax.servlet.FilterConfig)
-     */
+
     public void init(FilterConfig filterConfig) throws ServletException
     {
-        _context= filterConfig.getServletContext();
+        _context = filterConfig.getServletContext();
     }
 
-    /* ------------------------------------------------------------ */
-    /* 
-     * @see javax.servlet.Filter#doFilter(javax.servlet.ServletRequest, javax.servlet.ServletResponse, javax.servlet.FilterChain)
-     */
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-            throws IOException, ServletException
+        throws IOException, ServletException
     {
         String user = ((HttpServletRequest)request).getRemoteUser();
         String url = ((HttpServletRequest)request).getRequestURL().toString();
-        System.err.println("TestFilter: Request.url = " +url+", Request.getRemoteUser = "+user);
+        System.err.println("TestFilter: Request.url = " + url + ", Request.getRemoteUser = " + user);
 
         chain.doFilter(request, response);
     }
 
-    /* ------------------------------------------------------------ */
-    /* 
-     * @see javax.servlet.Filter#destroy()
-     */
     public void destroy()
     {
     }
-
 }
