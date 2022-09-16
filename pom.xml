@@ -26,7 +26,7 @@
 
     <jakarta.servlet.api.version>4.0.4</jakarta.servlet.api.version>
     <jakarta.servlet.jsp.api.version>2.3.6</jakarta.servlet.jsp.api.version>
-    <jetty.version>10.0.11</jetty.version>
+    <jetty.version>10.0.12</jetty.version>
   </properties>
   <build>
     <plugins>
